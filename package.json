@@ -1,7 +1,7 @@
 {
   "name": "antigravity-quota-watcher",
-  "displayName": "Antigravity Quota Watcher",
-  "description": "Watch Antigravity Language Server model quota usage from the status bar",
+  "displayName": "Antigravity Quota Monitor",
+  "description": "Monitor your Antigravity Language Server model quotas in real-time right from your status bar.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.85.0"
