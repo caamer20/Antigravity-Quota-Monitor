@@ -145,8 +145,11 @@ function updateStatusBar() {
     }).join('\n\n');
 
     const md = new vscode.MarkdownString(rows);
+    md.appendMarkdown('\n\n---\n\n');
+    md.appendMarkdown('[$(refresh) Refresh Quota](command:antigravity-quota.refresh)');
+
     md.supportHtml = true;
-    md.isTrusted = true;
+    md.isTrusted = true; // Required for command links to work
     statusBarItem.tooltip = md;
 
     // Apply interpolated color directly as a hex string
