@@ -95,16 +95,24 @@ function updateStatusBar() {
     }
 
     const pct = model.percentage;
-    statusBarItem.text = `$(rocket) ${pct}%`;
+    statusBarItem.text = `$(rocket) ${selectedModel}  ${pct}%`;
 
-    // Build hover tooltip (bullet list)
-    const tooltipLines = modelsQuota.map(m => {
-        let emoji = '🔴';
-        if (m.percentage === 100) emoji = '🟢';
-        else if (m.percentage >= 50) emoji = '🟡';
-        return `${emoji} **${m.modelName}**: ${m.percentage}%`;
-    });
-    statusBarItem.tooltip = new vscode.MarkdownString(tooltipLines.join('\n\n'));
+    // Build hover tooltip with HTML colored dots to match design
+    function dotColor(p: number): string {
+        if (p === 100) return '#4ade80';   // green
+        if (p >= 50) return '#facc15';   // yellow
+        return '#f87171';                   // red
+    }
+
+    const rows = modelsQuota.map(m => {
+        const color = dotColor(m.percentage);
+        return `<span style="color:${color};">●</span>&nbsp;&nbsp;**${m.modelName}**: ${m.percentage}%`;
+    }).join('\n\n');
+
+    const md = new vscode.MarkdownString(rows);
+    md.supportHtml = true;
+    md.isTrusted = true;
+    statusBarItem.tooltip = md;
 
     // Color code the status bar text
     if (pct === 100) {

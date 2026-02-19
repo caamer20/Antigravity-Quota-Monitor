@@ -6,6 +6,10 @@
   "engines": {
     "vscode": "^1.85.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caamer20/Antigravity-Quota-Monitor.git"
+  },
   "categories": [
     "Other"
   ],
