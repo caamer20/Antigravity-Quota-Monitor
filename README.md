@@ -3,7 +3,6 @@
 Status bar extension for Antigravity that shows model quota usage.
 
 ![Status Bar View](images/status_bar.png)
-![Quota List View](images/quota_list.png)
 
 ## Features
 
