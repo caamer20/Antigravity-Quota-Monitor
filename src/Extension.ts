@@ -146,7 +146,7 @@ function updateStatusBar() {
 
     const md = new vscode.MarkdownString(rows);
     md.appendMarkdown('\n\n---\n\n');
-    md.appendMarkdown('[$(refresh) Refresh Quota](command:antigravity-quota.refresh)');
+    md.appendMarkdown('[Refresh](command:antigravity-quota.refresh)');
 
     md.supportHtml = true;
     md.isTrusted = true; // Required for command links to work
