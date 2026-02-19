@@ -1,45 +1,36 @@
 # Antigravity Quota Monitor
 
-Monitor your Antigravity (Google AI) model quotas in real-time, directly from your IDE status bar.
-
-![Antigravity Quota Monitor Status Bar](https://raw.githubusercontent.com/caamer20/Antigravity-Quota-Monitor/main/images/demo.png) *(Placeholder if you add images later)*
+Status bar extension for Antigravity that shows model quota usage.
 
 ## Features
 
-- **🚀 Real-time Quota Monitoring**: Automatically refreshes every 5 seconds to keep you informed of your remaining limits.
-- **🔄 Auto-Sync**: Seamlessly detects and tracks whichever model you have currently active in the Antigravity UI.
-- **🎨 Dynamic Color Coding**:
-    - **Green** (Text/Icon): 100% quota remaining.
-    - **Yellow** (Text/Icon): 50% - 99% quota remaining.
-    - **Red** (Text/Icon): Less than 50% quota remaining.
-- **📊 Detailed Tooltip**: Hover over the status bar item to see a full breakdown of all available models and their current usage percentages.
-- **🖱️ Manual Override**: Click the rocket to manually select a specific model to track, or let the auto-sync do it for you.
+- Updates every 5 seconds to show remaining limits.
+- Automatically tracks whichever model you have active in Antigravity.
+- Color coding for easy status checks:
+    - Green: 100% quota.
+    - Yellow: 50% - 99% quota.
+    - Red: Below 50% quota.
+- Hover the status bar item to see a list of all models and their usage.
+- Click the rocket to manually pick a model (it will snap back to the active model on the next refresh).
 
 ## Installation (Mac)
 
-This extension is designed for "Plug and Play" deployment on Mac systems.
-
-1. **Download** the latest [Antigravity-Quota-Monitor.zip](https://github.com/caamer20/Antigravity-Quota-Monitor/raw/main/Antigravity-Quota-Monitor.zip).
-2. **Unzip** the archive to a folder.
-3. Open **Terminal** inside that folder and run:
+1. Download Antigravity-Quota-Monitor.zip from this repo.
+2. Unzip the folder.
+3. Open Terminal in the unzipped folder and run:
    ```bash
    chmod +x install.sh
    ./install.sh
    ```
-4. **Restart Antigravity** to activate the monitor.
+4. Restart Antigravity.
 
-## How it Works
+## How it works
 
-The monitor communicates directly with the local **Antigravity Language Server** process running on your machine. It automatically discovers the necessary port and extracts the required CSRF token from the process arguments, ensuring a secure and seamless connection without requiring manual API keys or configuration.
+The extension queries the local Antigravity Language Server. It finds the port and CSRF token from the running process, so there's no manual setup or API keys needed.
 
 ## Development
 
-If you'd like to contribute or build from source:
-
-1. Clone the repo: `git clone https://github.com/caamer20/Antigravity-Quota-Monitor.git`
-2. Install dependencies: `npm install`
-3. Compile: `npm run compile`
-4. Use the `install.sh` script to deploy your local build.
-
----
-Created with 🚀 by Cameron Amer
+1. git clone https://github.com/caamer20/Antigravity-Quota-Monitor.git
+2. npm install
+3. npm run compile
+4. Run install.sh to test your changes.
